@@ -110,7 +110,7 @@ const Home = () => {
     let skillsArr = skills;
     skillsArr[index].checked = !skillsArr[index].checked;
     setFormFields({ ...formFields, skills: skillsArr });
-    console.log(event, formFields);
+    console.log(event, value, formFields);
 
     const nameErr = `${name}Err`;
     errorSetter(name, skills, nameErr);
@@ -130,20 +130,19 @@ const Home = () => {
   };
 
   const resetFormFields = () => {
+    let skillsArr = skills;
+    skillsArr.forEach((skillsObj) => {
+      skillsObj.checked = false;
+    });
+
+    setFormFields({ ...formFields, skills: skillsArr });
+
+    setFormFields(defaultFormFields);
     setFormFieldErrors(errorFormFields);
     resetErrCSS();
 
-    // let skillsArr = skills;
-    // skillsArr.forEach((skillsObj) => {
-    //   skillsObj.checked = false;
-    // });
-
-    // setFormFields({ ...formFields, skills: skillsArr });
-
-    setFormFields(defaultFormFields);
-
     //Window Reload
-    // window.location.reload(true);
+    window.location.reload(true);
   };
 
   return (
