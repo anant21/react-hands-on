@@ -1,0 +1,3 @@
+export const ERROR_ACTION_TYPES = {
+  SET_FIELD_ERRORS: "errors/SET_FIELD_ERRORS",
+};
