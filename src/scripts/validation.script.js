@@ -2,6 +2,8 @@ const validateField = (fieldName, value) => {
   const name = document.getElementById("associate-name");
   const id = document.getElementById("associate-id");
   const project = document.getElementById("project-id");
+  const location = document.getElementById("location");
+  const profile = document.getElementById("profile");
   const comments = document.getElementById("comments");
 
   let err = "";
@@ -55,6 +57,44 @@ const validateField = (fieldName, value) => {
 
       break;
 
+    case "finalLoc":
+      if (!value || value === "location-message") {
+        err = "Please Select a Location";
+        location.style.border = "2px solid red";
+      } else {
+        location.style.border = "";
+        location.style.borderBottom = "1px solid grey";
+        err = "";
+      }
+      break;
+
+    case "skills":
+      let count = 0;
+      value.forEach((skillsObj) => {
+        if (skillsObj.checked === true) {
+          count++;
+        }
+      });
+
+      if (count < 5) {
+        err = "Please select Min 5 skills";
+      } else {
+        err = "";
+      }
+      console.log(count, err);
+      break;
+
+    case "profile":
+      if (value === false || value === null || value === "") {
+        err = "Please upload Profile Photo";
+        profile.style.border = "2px solid red";
+      } else {
+        profile.style.border = "";
+        err = "";
+      }
+
+      break;
+
     case "comments":
       if (!value) {
         err = "Please enter any comments";
@@ -68,7 +108,7 @@ const validateField = (fieldName, value) => {
       break;
 
     default:
-      console.log("Unknown fieldName", fieldName);
+      console.log("Unknown fieldName", fieldName, value);
   }
 
   return err;

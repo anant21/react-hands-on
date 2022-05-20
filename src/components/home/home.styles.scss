@@ -14,6 +14,84 @@
       font-weight: bold;
     }
   }
+  .radio {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    margin: 25px 0;
+  }
+  .location-select {
+    display: flex;
+    width: 100%;
+
+    .location-box {
+      background: none;
+      background-color: white;
+      color: grey;
+      font-size: 16px;
+      padding: 10px 10px 10px 5px;
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid grey;
+      margin: 25px 0;
+    }
+  }
+
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-bottom: 10px;
+
+    .skill-name {
+      background: none;
+      background-color: white;
+      color: black;
+      font-size: 16px;
+      padding: 10px 10px 10px 5px;
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: 0;
+      margin: 10px 0 5px 0;
+
+      label {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .profile-label {
+    display: flex;
+    width: 100%;
+    margin: 25px 0 0 0;
+    padding: 5px 5px;
+
+    label {
+      color: black;
+      font-size: 16px;
+      display: block;
+      font-weight: medium;
+    }
+  }
+  .profile-photo {
+    display: flex;
+    width: 100%;
+
+    input {
+      background: none;
+      background-color: white;
+      color: black;
+      font-size: 16px;
+      padding: 10px 10px 10px 5px;
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: 0;
+      margin: 0 0 5px 0;
+    }
+  }
 
   .buttons-container {
     display: flex;
